@@ -1,0 +1,53 @@
+# hashicorp/terraform-github-actions are in an archived repo
+# github.com/hashicorp/terraform-github-actions?tab=readme-ov-file
+
+name: 'Terraform Destroy Infra Cloud Resume Challenge'
+
+on:
+  workflow_dispatch:
+
+jobs:
+  terraform:
+    name: 'Terraform Destroy'
+    env:
+        ARM_CLIENT_ID: ${{ secrets.AZURE_AD_CLIENT_ID }}
+        ARM_CLIENT_SECRET: ${{ secrets.AZURE_AD_CLIENT_SECRET }}
+        ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        ARM_TENANT_ID: ${{ secrets.AZURE_AD_TENANT_ID }}
+        TF_VERSION: 1.9.8
+    runs-on: ubuntu-latest
+    environment: test
+
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v4
+  
+      - name: 'Terraform Format'
+        uses: hashicorp/terraform-github-actions@master
+        with:
+          tf_actions_version: ${{ env.TF_VERSION }}
+          tf_actions_subcommand: 'fmt'
+          tf_actions_working_dir: './terraform'
+
+      - name: 'Terraform Init'
+        uses: hashicorp/terraform-github-actions@master
+        with:
+          tf_actions_version: ${{ env.TF_VERSION }}
+          tf_actions_subcommand: 'init'
+          tf_actions_working_dir: './terraform'
+
+      - name: 'Terraform Taint'
+        uses: hashicorp/terraform-github-actions@master
+        with:
+          tf_actions_version: ${{ env.TF_VERSION }}
+          tf_actions_subcommand: 'taint'
+          tf_actions_working_dir: './terraform'
+
+      - name: 'Terraform Destroy'
+        uses: hashicorp/terraform-github-actions@master
+        with:
+          tf_actions_version: ${{ env.TF_VERSION }}
+          tf_actions_subcommand: 'destroy'
+          tf_actions_working_dir: './terraform'
+
+
