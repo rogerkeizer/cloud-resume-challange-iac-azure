@@ -94,3 +94,9 @@ cdn = {
 ````
 
 After running the Create workflow you have a basic static website containing two files. You have to manually upload or create another workflow to transfer your static website files to Azure.
+
+## Failing Github Actions
+The workflows will fail without the correct Azure credentials.
+You will get this error: `Error building ARM Config: please ensure you have installed Azure CLI version 2.0.79 or newer. Error parsing json result from the Azure CLI: launching Azure CLI: exec: "az": executable file not found in $PATH.`
+
+The solution is to proper configure credentials as discribed in this README.
