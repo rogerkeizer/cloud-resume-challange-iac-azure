@@ -5,9 +5,9 @@ __(Azure / [Terraform](https://www.terraform.io) version)__
 This repository covers step 2 to 6, 12 and 13 of the Azure version of [the Cloud Resume Challenge](https://cloudresumechallenge.dev/docs/the-challenge/azure/) created by [Forrest Brazeal](https://github.com/forrestbrazeal) and contains the files to deploy a static website on an Azure Storage Account with an Azure managed certificate and a custom domain name.
 
 ## Terraform
-The Terraform Github packages used in this repository are [archieved here](https://github.com/hashicorp/terraform-github-actions?tab=readme-ov-file). These packages are used in the yaml files in the .github/workflows folder. [These packages](https://github.com/hashicorp/setup-terraform) need to be implemented in order to replace the archived ones.
+The Terraform Github packages used in this repository are [archived here](https://github.com/hashicorp/terraform-github-actions?tab=readme-ov-file). These packages are used in the yaml files in the .github/workflows folder. [These packages](https://github.com/hashicorp/setup-terraform) need to be implemented in order to replace the archived ones.
 
-> At the time of writing this README it is possible to deploy the infra needed to host the static website for the Cloud Resume Challenge using these __archieved__ packages.
+> At the time of writing this README it is possible to deploy the infra needed to host the static website for the Cloud Resume Challenge using these __archived__ packages.
 
 ### Create Terraform state (tfstate)
 
