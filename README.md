@@ -99,4 +99,4 @@ After running the Create workflow you have a basic static website containing two
 The workflows will fail without the correct Azure credentials.
 You will get this error: `Error building ARM Config: please ensure you have installed Azure CLI version 2.0.79 or newer. Error parsing json result from the Azure CLI: launching Azure CLI: exec: "az": executable file not found in $PATH.`
 
-The solution is to proper configure credentials as discribed in this README.
+The solution is to proper configure credentials as described [here](https://github.com/rogerkeizer/cloud-resume-challange-iac-azure?tab=readme-ov-file#credentials) in this README.
